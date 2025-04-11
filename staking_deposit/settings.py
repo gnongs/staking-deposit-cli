@@ -14,6 +14,7 @@ MAINNET = 'mainnet'
 SEPOLIA = 'sepolia'
 HOLESKY = 'holesky'
 MEKONG = 'mekong'
+HELDER = 'helder'
 
 # Mainnet setting
 MainnetSetting = BaseChainSetting(
@@ -31,13 +32,17 @@ HoleskySetting = BaseChainSetting(
 MekongSetting = BaseChainSetting(
     NETWORK_NAME=MEKONG, GENESIS_FORK_VERSION=bytes.fromhex('10637624'),
     GENESIS_VALIDATORS_ROOT=bytes.fromhex('9838240bca889c52818d7502179b393a828f61f15119d9027827c36caeb67db7'))
-
+# Helder setting
+HelderSetting = BaseChainSetting(
+    NETWORK_NAME=HELDER, GENESIS_FORK_VERSION=bytes.fromhex('10000000'),
+    GENESIS_VALIDATORS_ROOT=bytes.fromhex('a55f9089402f027c67db4a43b6eb7fbb7b2eb79f194a90a2cd4f31913e47b336'))
 
 ALL_CHAINS: Dict[str, BaseChainSetting] = {
     MAINNET: MainnetSetting,
     SEPOLIA: SepoliaSetting,
     HOLESKY: HoleskySetting,
     MEKONG: MekongSetting,
+    HELDER: HelderSetting,
 }
 
 
